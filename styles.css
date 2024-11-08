@@ -1,0 +1,213 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.speakers {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Speaker Title and Subtitle */
+.speakers__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.speakers__subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Link styling */
+.speakers__link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Speaker Slider Container */
+.speakers__slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+    /* margin: 20px auto; */
+    max-width: 100%;
+    width: 100%;
+}
+
+
+
+/* Slider Buttons (Left and Right) */
+.speakers__slider-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.speakers__slider-btn:hover {
+    background-color: #0056b3;
+}
+
+.speakers__slider-btn--left {
+    left: 10px;
+}
+
+.speakers__slider-btn--right {
+    right: 10px;
+}
+
+/* Card Container (where the speaker cards are placed) */
+.speakers__card-container {
+    display: flex;
+    overflow: hidden;
+    margin-left: 5%;
+    width: 100%;
+    gap: 20px; /* Adds space between the cards */
+    padding: 20px 0;
+}
+
+/* Speaker Card */
+.speakers__card {
+    background: #f1f0f0d3;
+    padding: 20px;
+    width: 230px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.speakers__card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Speaker Card Image */
+.speakers__card-img , .speakers__details-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+/* Speaker Card Name, Position, and Company */
+.speakers__card-name {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.speakers__card-position,
+.speakers__card-company {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .speakers__slider-btn {
+        padding: 8px;
+        font-size: 18px;
+    }
+
+    .speakers__card-container {
+        flex-wrap: wrap; /* Allows the cards to wrap in smaller screens */
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .speakers__card {
+        width: 180px; /* Adjust card size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .speakers__card {
+        width: 150px; /* Smaller card size on very small screens */
+    }
+
+    .speakers__title {
+        font-size: 20px; /* Adjust title font size */
+    }
+
+    .speakers__subtitle {
+        font-size: 14px; /* Adjust subtitle font size */
+    }
+}
+
+/* Program Button */
+.speakers__program-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.speakers__program-btn:hover {
+    background-color: #0056b3;
+}
+
+.speakers__details-close {
+    position: absolute; /* Position it relative to the .speakers__details container */
+    top: 10px; /* 10px from the top */
+    right: 10px; /* 10px from the right */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+    z-index: 2; /* Ensure it stays above the content */
+}
+
+.speakers__details {
+    display: none; /* Initially hidden */
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative; /* Make the section a positioned container for the close button */
+}
+
+
+.details-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+
+.speakers__details-content1 {
+    margin: 15px;
+    text-overflow: clip;
+    width: 200px;
+    border-right: 1px solid #555;
+}
+
+.speakers__details-content2 {
+    margin: 15px;
+    text-overflow: clip;
+    width: 550px;
+}
